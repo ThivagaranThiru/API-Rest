@@ -1,0 +1,45 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <br>
+      <img src="https://image.flaticon.com/icons/svg/2484/2484597.svg" id="icon" alt="User Icon" style="max-width:50px;"/>
+      <br>
+    </div>
+
+    <!-- Login Form -->
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit();" #f="ngForm" novalidate>
+
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)]="form.username" #username="ngModel" required />
+      <div *ngIf="f.submitted && username.invalid">
+        <div *ngIf="username.errors.required">Username is required</div>
+      </div>
+
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" [(ngModel)]="form.password" #password="ngModel"/>
+      <div *ngIf="f.submitted && password.invalid">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+
+      <div class="fadeIn fourth">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+          Login failed: {{errorMessage}}
+        </div>
+      </div>
+    </form>
+
+    <!-- Remind Suscribe -->
+    <div id="formFooter">
+      <a class="underlineHover" href="signup" >Suscribe!</a>
+    </div>
+
+  </div>
+</div>

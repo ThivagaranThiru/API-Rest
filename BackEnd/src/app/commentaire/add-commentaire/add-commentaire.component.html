@@ -1,0 +1,17 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Edit Commentaire</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="hidden">
+      <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+    </div>
+    <div class="form-group">
+      <label for="commentaire">Commentaire</label>
+      <input type="text" formControlName="commentaire" placeholder="commentaire" name="commentaire" class="form-control" id="commentaire" required="true">
+    </div>
+    <div class="form-group">
+      <label for="note">Note</label>
+      <input type="number" formControlName="note" placeholder="note" name="note" class="form-control" id="note" required="true">
+    </div>
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>

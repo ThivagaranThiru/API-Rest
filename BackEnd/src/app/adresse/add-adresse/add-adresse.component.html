@@ -1,0 +1,25 @@
+<div class="col-md-6 adresse-container">
+  <h2 class="text-center">Add/Edit Adresse </h2>
+ <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="hidden">
+      <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id" >
+    </div>
+    <div class="form-group" required>
+      <label for="rue">Rue:</label>
+      <input type="text" formControlName="rue" placeholder="rue" name="rue" class="form-control" id="rue" required="true">
+    </div>
+    <div class="form-group">
+      <label for="postalCode">PostalCode</label>
+      <input type="text" formControlName="postalCode" placeholder="postalCode" name="postalCode" class="form-control" id="postalCode" required="true">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" formControlName="city" placeholder="city" name="city" class="form-control" id="city" required="true">
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" formControlName="country" placeholder="country" name="country" class="form-control" id="country" required="true">
+    </div>
+    <button class="btn btn-success">Add/Update</button>
+  </form>
+</div>

@@ -1,0 +1,67 @@
+<!-- Page Heading -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header">
+            <button (click)="createProduit()" class="btn btn-default btn-lg pull-right">Create Produit</button>
+              Produit <small>Listes des Produits</small>
+            </h1>
+          </div>
+        </div>           
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                                <div class="well well-sm">
+                  <form action="#" method="get">
+                  <div class="input-group">
+                      <input class="form-control" id="system-search" name="search" autocomplete="off" placeholder="Recherche un produit" [(ngModel)]="term" required>
+                      <span class="input-group-btn">
+                          <i class="fa fa-search"></i>
+                      </span>
+                  </div>
+                  </form>
+                </div>
+                <h3 class="panel-title"><i class="fa fa-users fa-fw"></i> Tables de Produits</h3>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+                   <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Reference</th>
+                        <th>Prix</th>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>Stock</th>
+                        <th>Username</th>
+                        <th>Image</th>
+                        <!--th>Date de création</th>
+                        <th>Date de modification</th--> 
+                        <th>Editer</th>
+                        <th>Supprimer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let produit of produits | filter:term">
+                          <td>{{produit.id}}</td>
+                          <td>{{produit.reference}}</td>
+                          <td>{{produit.prix}}</td>
+                          <td>{{produit.nom}}</td>
+                          <td>{{produit.description}}</td>
+                          <td>{{produit.stock}}</td>
+                          <td>{{produit.user.username}}</td>
+                          <td><img src="{{produit.url}}" width="150" height="150"></td>
+                          <!--td>{{user.dateCreation}}</td>
+                          <td>{{user.dateModi}}</td-->
+                          <td *ngIf="authority === 'admin' || userId === produit.user.id"><button (click)="editProduit(produit)" class="btn btn-primary"><i class="fa fa-edit"></i></button></td>
+                          <td *ngIf="authority === 'admin' || userId === produit.user.id"><button (click)="deleteProduit(produit)" class="btn btn-primary" ><i class="fa fa-trash-o"></i></button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+             </div>
+            </div>
+           </div>
