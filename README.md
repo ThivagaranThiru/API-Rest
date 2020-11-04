@@ -1,14 +1,22 @@
 # API Rest
 
-J'ai développé une API Rest avec Spring Boot et une interface web en Angular. L'API Rest va communiquer avec l'interface web qui est une boutique e-shop avec un parcours d’achat complet (mis au panier, sélection de l'adresse d’envoi) contenant les tables suivantes : Utilisateur, Adresse, Produit, Commentaire, Panier, Facturation.
+J'ai développé une API Rest avec Spring Boot et deux interface web en Angular. L'API Rest va communiquer avec les interfaces web qui ont en commun les tables suivantes : Utilisateur, Adresse, Produit, Commentaire, Panier, Facturation.
+
+L’application est divisée en trois parties :
+
+- Une API Rest, permettant de manipuler un ensemble de données cohérent.
+
+- Une partie FrontEnd qui va permettre aux clients du site de passer des commandes avec un catalogue représenté par une liste de produits.
+
+- Une partie BackEnd qui va permettre d’administrer le site (créer des utilisateurs, créer /modifier des produits, gérer le stock, etc.).
 
 Les fonctionnalités implémentées sont :
 
-- Un utilisateur peut s’inscrire et se connecter. 
+- Un système d'authentification complet avec formulaire d'inscription, de connexion et de gestion des comptes.
 
-- Un utilisateur avec le ROLE_ADMIN doit avoir accès à des sections que les autres utilisateurs ne voient pas ROLE_USER.
+- Un utilisateur avec le ROLE_ADMIN doit avoir accès à des sections que les autres utilisateurs ne voient pas (ROLE_USER).
 
-- Une fonctionnalité CRUD sur les Utilisateur, Adresse, Produit, Commentaire, Panier en fonction de l'utilisateur et de son rôle. Elles communiquent entre elles grâce à des clés relationnelles.
+- Une fonctionnalité CRUD sur les Utilisateur, Adresse, Produit, Commentaire, Panier, Facturation en fonction de l'utilisateur connecté et/ou de son rôle. Elles communiquent entre elles grâce à des clés relationnelles.
 
 - Un parcours d’achat de la mise au panier à la validation d’une commande.
 
