@@ -25,5 +25,5 @@ Les fonctionnalités implémentées sont :
 
 Vous pouvez trouver ci-joint notre schéma SQL sur le dépôt git.
 
-Technologies utilisées : Spring Tools Suite 4 (Java), API Rest, MySQL, Spring Security (Tokens JWT), Angular, Node.js, Test Unitaire (MockMvc)
+Technologies utilisées : Spring Tools Suite 4 (Java), API Rest, MySQL, Spring Security (Tokens JWT), Angular, Node.js, Test Unitaire (MockMvc).
 
