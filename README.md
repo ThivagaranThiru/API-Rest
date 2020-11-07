@@ -1,6 +1,6 @@
 # API Rest
 
-J'ai développé une API Rest avec Spring Boot et deux interface web en Angular. L'API Rest va communiquer avec les interfaces web qui ont en commun les tables suivantes : Utilisateur, Adresse, Produit, Commentaire, Panier, Facturation.
+L'objectif du projet est de développer une API Rest avec Spring Boot et deux interface web en Angular. L'API Rest va communiquer avec les interfaces web qui ont en commun les tables suivantes : Utilisateur, Adresse, Produit, Commentaire, Panier, Facturation.
 
 L’application est divisée en trois parties :
 
